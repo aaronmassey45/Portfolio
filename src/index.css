@@ -1,7 +1,33 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+nav ul a {
+  font-size: inherit;
+}
+
+.sidenav li > a {
+  color: inherit;
+  font-size: inherit;
+}
+
+.title {
+  font-size: 1em;
+  margin: 0.1em 0 0.6em;
+  display: inline-block;
+  font-style: italic;
+  padding: 6px 10px;
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  line-height: 1;
 }
 
 .winter-neva-gradient {
