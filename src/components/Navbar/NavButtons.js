@@ -1,12 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const style = {
-  navLink: {
-    fontSize: 'xx-large',
-    float: 'none',
-    display: 'inline-flex',
-    margin: '0 .4em',
-  },
   sideNav: {
     fontSize: 'large',
     margin: '.5em 0',
@@ -15,11 +9,11 @@ const style = {
 };
 
 export default ({ sideNav }) => {
-  const navStyles = sideNav ? style.sideNav : style.navLink;
+  const navStyles = sideNav ? style.sideNav : {};
   return (
-    <React.Fragment>
+    <Fragment>
       <li style={navStyles}>
-        <a href="/">about me</a>
+        <a href="/">about</a>
       </li>
       <li style={navStyles}>
         <a href="/">180 days of code</a>
@@ -30,6 +24,6 @@ export default ({ sideNav }) => {
       <li style={navStyles}>
         <a href="/">resources</a>
       </li>
-    </React.Fragment>
+    </Fragment>
   );
 };
