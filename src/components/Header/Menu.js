@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter, Link } from 'react-router-dom';
 
 import { HeaderContext } from './Header';
 
@@ -22,8 +23,6 @@ const FIELDS = [
 ];
 
 class Menu extends Component {
-  renderFields = () => {};
-
   render() {
     return (
       <HeaderContext.Consumer>
@@ -34,11 +33,15 @@ class Menu extends Component {
             </div>
             <ul className={props.menuNavClassList.join(' ')}>
               {FIELDS.map(({ to, title }) => {
+                const classList = [...props.navItemClassList];
+                if (this.props.match.path === to && 'current') {
+                  classList.push('current');
+                }
                 return (
-                  <li className={props.navItemClassList.join(' ')} key={title}>
-                    <a href={to} className="nav-link">
+                  <li className={classList.join(' ')} key={title}>
+                    <Link to={to} className="nav-link">
                       {title}
-                    </a>
+                    </Link>
                   </li>
                 );
               })}
@@ -50,4 +53,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export default withRouter(Menu);
