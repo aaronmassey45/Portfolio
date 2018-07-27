@@ -34,7 +34,7 @@ class Menu extends Component {
             <ul className={props.menuNavClassList.join(' ')}>
               {FIELDS.map(({ to, title }) => {
                 const classList = [...props.navItemClassList];
-                if (this.props.match.path === to && 'current') {
+                if (this.props.location.pathname === to && 'current') {
                   classList.push('current');
                 }
                 return (
