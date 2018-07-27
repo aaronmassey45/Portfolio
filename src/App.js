@@ -15,6 +15,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
           </Switch>
+          <footer id="main-footer">Copyright &copy; 2018</footer>
         </Fragment>
       </BrowserRouter>
     );
