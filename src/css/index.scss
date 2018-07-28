@@ -70,6 +70,39 @@ main {
       margin-top: 20vh;
     }
   }
+
+  &#contact {
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 3rem;
+
+      .box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+
+        a {
+          font-size: 1.3rem;
+          padding: 0.8rem;
+          border: 3px white solid;
+          @include easeOut;
+
+          &:hover {
+            background: $secondary-color;
+            border: 3px black solid;
+            color: set-text-color($secondary-color);
+
+            span,
+            i {
+              color: set-text-color($secondary-color);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .about-info {
@@ -124,32 +157,6 @@ main {
       opacity: 0.5;
       border-color: $secondary-color;
       @include easeOut;
-    }
-  }
-}
-
-.boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem;
-
-  div {
-    font-size: 2rem;
-    border: 3px white solid;
-    padding: 1.5rem 2.5rem;
-    margin-bottom: 3rem;
-    @include easeOut;
-
-    &:hover {
-      padding: 0.5rem 1.5rem;
-      background: $secondary-color;
-      color: set-text-color($secondary-color);
-
-      span {
-        color: set-text-color($secondary-color);
-      }
     }
   }
 }

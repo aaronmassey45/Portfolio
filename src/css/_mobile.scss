@@ -22,6 +22,10 @@
       line-height: 1;
       margin-bottom: 1rem;
     }
+
+    &#contact .content {
+      grid-template-columns: 1fr;
+    }
   }
 
   ul.menu-nav,
@@ -66,8 +70,9 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .boxes {
-    div {
+  .box {
+    margin-top: 3rem;
+    a {
       word-break: break-all;
     }
   }
