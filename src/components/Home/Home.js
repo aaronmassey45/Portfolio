@@ -20,9 +20,7 @@ export default class extends Component {
         <h2 className="sm-heading">
           Web Developer, Programmer, Dog Whisperer, & Fitness Guru.
         </h2>
-        <div className="icons">
-          <UserIcons />
-        </div>
+        <UserIcons />
       </main>
     );
   }
