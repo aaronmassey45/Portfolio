@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/portrait.jpg';
 
 export default class extends Component {
   componentDidMount() {
@@ -8,7 +8,7 @@ export default class extends Component {
 
   render() {
     return (
-      <main id="home">
+      <main id="about">
         <h1 className="lg-heading">
           About <span className="text-secondary">Me</span>.
         </h1>
