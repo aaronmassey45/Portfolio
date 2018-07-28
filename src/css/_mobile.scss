@@ -65,6 +65,12 @@
   .projects {
     grid-template-columns: 1fr 1fr;
   }
+
+  .boxes {
+    div {
+      word-break: break-all;
+    }
+  }
 }
 
 //phones
