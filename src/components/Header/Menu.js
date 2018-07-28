@@ -39,7 +39,11 @@ class Menu extends Component {
                 }
                 return (
                   <li className={classList.join(' ')} key={title}>
-                    <Link to={to} className="nav-link">
+                    <Link
+                      to={to}
+                      className="nav-link"
+                      onClick={props.toggleMenu}
+                    >
                       {title}
                     </Link>
                   </li>
