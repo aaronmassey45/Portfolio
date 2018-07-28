@@ -4,7 +4,7 @@ import { SOCIAL } from '../../exports';
 
 export default () => {
   return (
-    <div>
+    <div className="icons">
       {SOCIAL.map(({ name, link }) => {
         return (
           <a href={link} key={name} target="_blank">
