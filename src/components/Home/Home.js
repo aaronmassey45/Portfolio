@@ -7,6 +7,10 @@ export default class extends Component {
     document.body.id = 'bg-img';
   }
 
+  componentWillUnmount() {
+    document.body.id = '';
+  }
+
   render() {
     return (
       <main id="home">

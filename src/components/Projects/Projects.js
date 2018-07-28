@@ -30,10 +30,6 @@ const PROJECTS = [
 ];
 
 export default class extends Component {
-  componentDidMount() {
-    document.body.id = '';
-  }
-
   renderProjects = () => {
     return PROJECTS.map(({ name, img, to }) => (
       <div className="items" key={name}>
