@@ -1,33 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-const PROJECTS = [
-  {
-    name: 'project1',
-    img: require('../../assets/project1.jpg'),
-    to: '/projects/#',
-  },
-  {
-    name: 'project2',
-    img: require('../../assets/project2.jpg'),
-    to: '/projects/#',
-  },
-  {
-    name: 'project3',
-    img: require('../../assets/project3.jpg'),
-    to: '/projects/#',
-  },
-  {
-    name: 'project4',
-    img: require('../../assets/project4.jpg'),
-    to: '/projects/#',
-  },
-  {
-    name: 'project5',
-    img: require('../../assets/project5.jpg'),
-    to: '/projects/#',
-  },
-];
+import { PROJECTS } from '../../exports';
 
 export default class extends Component {
   renderProjects = () => {
