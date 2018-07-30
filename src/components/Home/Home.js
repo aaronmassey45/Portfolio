@@ -18,7 +18,7 @@ export default class extends Component {
           Aaron <span className="text-secondary">Massey</span>
         </h1>
         <h2 className="sm-heading">
-          Web Developer, Programmer, Dog Whisperer, & Fitness Guru.
+          Full Stack Engineer, Dog Whisperer, & Fitness Guru.
         </h2>
         <UserIcons />
       </main>
