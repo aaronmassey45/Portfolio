@@ -221,4 +221,9 @@ main {
   height: 60px;
 }
 
+.image-fade-in {
+  opacity: 1;
+  @include easeOut;
+}
+
 @import 'mobile';
