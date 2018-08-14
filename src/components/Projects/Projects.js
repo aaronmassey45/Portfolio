@@ -6,7 +6,7 @@ import { PROJECTS } from '../../exports';
 
 export default class extends Component {
   renderProjects = () => {
-    return PROJECTS.map(({ name, img, preload, to }) => (
+    return PROJECTS.map(({ name, img, preload, to, github }) => (
       <div className="items" key={name}>
         <Link to={to}>
           <Image srcPreload={preload} srcLoaded={img} name={name} />
@@ -14,9 +14,9 @@ export default class extends Component {
         <Link to={to} className="btn-light">
           <i className="fas fa-eye" /> {name}
         </Link>
-        <Link to={to} className="btn-dark">
+        <a href={github} target="_blank" className="btn-dark">
           <i className="fab fa-github" /> GitHub
-        </Link>
+        </a>
       </div>
     ));
   };
