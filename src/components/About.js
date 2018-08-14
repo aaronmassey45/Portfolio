@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../assets/portrait.jpg';
+import logo from '../assets/logo.png';
 
 import { SKILLS } from '../exports';
 
