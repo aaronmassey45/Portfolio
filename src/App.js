@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects/Projects';
+import NoMatch from './components/NoMatch';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/about" component={About} />
             <Route path="/projects" component={Projects} />
             <Route path="/contact" component={Contact} />
+            <Route component={NoMatch} />
           </Switch>
           <footer id="main-footer">Aaron Massey &copy; 2018</footer>
         </Fragment>
