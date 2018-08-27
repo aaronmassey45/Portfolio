@@ -19,7 +19,7 @@ class App extends Component {
             <Route path="/projects" component={Projects} />
             <Route path="/contact" component={Contact} />
           </Switch>
-          <footer id="main-footer">Copyright &copy; 2018</footer>
+          <footer id="main-footer">Aaron Massey &copy; 2018</footer>
         </Fragment>
       </BrowserRouter>
     );
