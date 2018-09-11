@@ -27,13 +27,13 @@ export const PROJECTS = [
     to: 'https://aaronmassey.pro/fizzbuzz/',
     github: 'https://github.com/aaronmassey45/180Websites-Day-69',
   },
-  // {
-  //   name: 'Rick-tacular Mortypedia',
-  //   img: require('./assets/rickmorty.png'),
-  //   preload: require('./assets/rickmorty-xs.png'),
-  //   to: '/projects/#',
-  //   github: 'https://github.com/aaronmassey45',
-  // },
+  {
+    name: 'Issue Tracker',
+    img: require('./assets/issuetracker.png'),
+    preload: require('./assets/issuetracker-xs.png'),
+    to: 'https://peppermint-sneeze.glitch.me/',
+    github: 'https://github.com/aaronmassey45/IssueTracker',
+  },
 ];
 
 export const SOCIAL = [
