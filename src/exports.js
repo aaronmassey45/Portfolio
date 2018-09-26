@@ -41,6 +41,13 @@ export const PROJECTS = [
     to: 'https://aaronmassey.pro/tmdb-search/',
     github: 'https://github.com/aaronmassey45/tMDB-Search',
   },
+  {
+    name: 'Personal Library',
+    img: 'https://imgur.com/9KTCjLq.png',
+    preload: 'https://imgur.com/DYHKhLH.png',
+    to: 'https://oasis-atom.glitch.me/',
+    github: 'https://github.com/aaronmassey45/personal-library',
+  },
 ];
 
 export const SOCIAL = [
