@@ -48,6 +48,13 @@ export const PROJECTS = [
     to: 'https://oasis-atom.glitch.me/',
     github: 'https://github.com/aaronmassey45/personal-library',
   },
+  {
+    name: 'TV Show Reminder',
+    img: 'https://imgur.com/k5TvMlA.png',
+    preload: 'https://imgur.com/U3jYeSv.png',
+    to: 'https://aaronmassey.pro/tv-reminder/',
+    github: 'https://github.com/aaronmassey45/TV-Show-Reminder',
+  },
 ];
 
 export const SOCIAL = [
