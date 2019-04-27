@@ -19,7 +19,9 @@ const App = () => (
         <Route path="/contact" component={Contact} />
         <Route component={NoMatch} />
       </Switch>
-      <footer id="main-footer">Aaron Massey &copy; 2018</footer>
+      <footer id="main-footer">
+        Aaron Massey &copy; {new Date().getFullYear()}
+      </footer>
     </>
   </Router>
 );
