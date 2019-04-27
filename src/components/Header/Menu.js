@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 
 import { HeaderContext } from './Header';
@@ -22,39 +22,31 @@ const FIELDS = [
   },
 ];
 
-class Menu extends Component {
-  render() {
-    return (
-      <HeaderContext.Consumer>
-        {props => (
-          <nav className={props.menuClassList.join(' ')}>
-            <div className={props.menuBrandingClassList.join(' ')}>
-              <div className="portrait" />
-            </div>
-            <ul className={props.menuNavClassList.join(' ')}>
-              {FIELDS.map(({ to, title }) => {
-                const classList = [...props.navItemClassList];
-                if (this.props.location.pathname === to && 'current') {
-                  classList.push('current');
-                }
-                return (
-                  <li className={classList.join(' ')} key={title}>
-                    <Link
-                      to={to}
-                      className="nav-link"
-                      onClick={props.toggleMenu}
-                    >
-                      {title}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        )}
-      </HeaderContext.Consumer>
-    );
-  }
-}
+const Menu = props => (
+  <HeaderContext.Consumer>
+    {context => (
+      <nav className={context.menuClassList.join(' ')}>
+        <div className={context.menuBrandingClassList.join(' ')}>
+          <div className="portrait" />
+        </div>
+        <ul className={context.menuNavClassList.join(' ')}>
+          {FIELDS.map(({ to, title }) => {
+            const classList = [...context.navItemClassList];
+            if (props.location.pathname === to && 'current') {
+              classList.push('current');
+            }
+            return (
+              <li className={classList.join(' ')} key={title}>
+                <Link to={to} className="nav-link" onClick={context.toggleMenu}>
+                  {title}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    )}
+  </HeaderContext.Consumer>
+);
 
 export default withRouter(Menu);
