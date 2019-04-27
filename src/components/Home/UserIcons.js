@@ -7,7 +7,7 @@ export default () => {
     <div className="icons">
       {SOCIAL.map(({ name, link }) => {
         return (
-          <a href={link} key={name} target="_blank">
+          <a href={link} key={name} target="_blank" rel="noopener noreferrer">
             <i className={`fab fa-${name} fa-2x`} />
           </a>
         );

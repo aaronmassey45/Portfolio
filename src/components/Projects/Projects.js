@@ -7,13 +7,23 @@ export default class extends Component {
   renderProjects = () => {
     return PROJECTS.map(({ name, img, preload, to, github }) => (
       <div className="items" key={name}>
-        <a href={to} target="_blank">
+        <a href={to} target="_blank" rel="noopener noreferrer">
           <Image srcPreload={preload} srcLoaded={img} name={name} />
         </a>
-        <a href={to} target="_blank" className="btn-light">
+        <a
+          href={to}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-light"
+        >
           <i className="fas fa-eye" /> {name} | Demo
         </a>
-        <a href={github} target="_blank" className="btn-dark">
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-dark"
+        >
           <i className="fab fa-github" /> View on GitHub
         </a>
       </div>
