@@ -1,24 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { HeaderContext } from './Header';
 
-class MenuButton extends Component {
-  render() {
-    return (
-      <HeaderContext.Consumer>
-        {props => (
-          <div
-            className={props.menuBtnClassList.join(' ')}
-            onClick={props.toggleMenu}
-          >
-            <div className="btn-line" />
-            <div className="btn-line" />
-            <div className="btn-line" />
-          </div>
-        )}
-      </HeaderContext.Consumer>
-    );
-  }
-}
+const MenuButton = () => (
+  <HeaderContext.Consumer>
+    {context => (
+      <div
+        className={context.menuBtnClassList.join(' ')}
+        onClick={context.toggleMenu}
+      >
+        <div className="btn-line" />
+        <div className="btn-line" />
+        <div className="btn-line" />
+      </div>
+    )}
+  </HeaderContext.Consumer>
+);
 
 export default MenuButton;
