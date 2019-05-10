@@ -179,6 +179,7 @@ main {
   img {
     width: 100%;
     border: 3px solid white;
+    min-height: 200px;
 
     &:hover {
       opacity: 0.5;
