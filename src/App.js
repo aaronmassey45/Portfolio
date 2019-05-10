@@ -1,29 +1,39 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import Header from './components/Header/Header';
-import Home from './components/Home/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import ProjectsList from './components/Projects/ProjectsList';
-import NoMatch from './components/NoMatch';
+const Home = lazy(() => import('./components/Home/Home'));
+const About = lazy(() => import('./components/About'));
+const Contact = lazy(() => import('./components/Contact'));
+const ProjectsList = lazy(() => import('./components/Projects/ProjectsList'));
+const NoMatch = lazy(() => import('./components/NoMatch'));
 
 const App = () => (
   <Router>
     <>
       <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/projects" component={ProjectsList} />
-        <Route path="/contact" component={Contact} />
-        <Route component={NoMatch} />
-      </Switch>
+      <Suspense fallback={<main />}>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/projects" component={ProjectsList} />
+          <Route exact path="/contact" component={Contact} />
+          <Route component={NoMatch} />
+        </Switch>
+      </Suspense>
       <footer id="main-footer">
         Aaron Massey &copy; {new Date().getFullYear()}
       </footer>
     </>
   </Router>
 );
+
+/* eslint-disable react/forbid-foreign-prop-types */
+Route.propTypes.component = PropTypes.oneOfType([
+  Route.propTypes.component,
+  PropTypes.object,
+]);
+/* eslint-enable react/forbid-foreign-prop-types */
 
 export default App;
