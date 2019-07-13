@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Header from './components/Header/Header';
-const Home = lazy(() => import('./components/Home/Home'));
+const HomePage = lazy(() => import('./pages/HomePage'));
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
 const ProjectsList = lazy(() => import('./components/Projects/ProjectsList'));
@@ -15,7 +15,7 @@ const App = () => (
       <Header />
       <Suspense fallback={<main />}>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" component={ProjectsList} />
           <Route exact path="/contact" component={Contact} />
