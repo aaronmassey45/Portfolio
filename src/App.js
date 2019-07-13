@@ -6,7 +6,7 @@ import Header from './components/Header/Header';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/about-page/AboutPage'));
 const Contact = lazy(() => import('./components/Contact'));
-const ProjectsList = lazy(() => import('./components/Projects/ProjectsList'));
+const ProjectsPage = lazy(() => import('./pages/projects-page/ProjectsPage'));
 const NoMatch = lazy(() => import('./components/NoMatch'));
 
 const App = () => (
@@ -17,7 +17,7 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/about" component={AboutPage} />
-          <Route exact path="/projects" component={ProjectsList} />
+          <Route exact path="/projects" component={ProjectsPage} />
           <Route exact path="/contact" component={Contact} />
           <Route component={NoMatch} />
         </Switch>
