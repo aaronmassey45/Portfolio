@@ -7,7 +7,7 @@ const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/about-page/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const ProjectsPage = lazy(() => import('./pages/projects-page/ProjectsPage'));
-const NoMatch = lazy(() => import('./components/NoMatch'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 const App = () => (
   <Router>
@@ -19,7 +19,7 @@ const App = () => (
           <Route exact path="/about" component={AboutPage} />
           <Route exact path="/projects" component={ProjectsPage} />
           <Route exact path="/contact" component={ContactPage} />
-          <Route component={NoMatch} />
+          <Route component={NotFoundPage} />
         </Switch>
       </Suspense>
       <footer id="main-footer">
