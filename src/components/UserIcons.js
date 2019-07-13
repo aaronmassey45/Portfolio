@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SOCIAL } from '../../exports';
+import { SOCIAL } from '../exports';
 
 export default () => {
   return (
