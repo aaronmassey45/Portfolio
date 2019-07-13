@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Header from './components/Header/Header';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/about-page/AboutPage'));
-const Contact = lazy(() => import('./components/Contact'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
 const ProjectsPage = lazy(() => import('./pages/projects-page/ProjectsPage'));
 const NoMatch = lazy(() => import('./components/NoMatch'));
 
@@ -18,7 +18,7 @@ const App = () => (
           <Route exact path="/" component={HomePage} />
           <Route exact path="/about" component={AboutPage} />
           <Route exact path="/projects" component={ProjectsPage} />
-          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/contact" component={ContactPage} />
           <Route component={NoMatch} />
         </Switch>
       </Suspense>
