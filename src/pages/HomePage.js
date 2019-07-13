@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
-import UserIcons from './UserIcons';
+import UserIcons from '../components/UserIcons';
 
-const Home = () => {
+const HomePage = () => {
   useEffect(() => {
     document.body.id = 'bg-img';
 
@@ -24,4 +24,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
