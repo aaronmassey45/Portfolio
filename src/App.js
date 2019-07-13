@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Header from './components/Header/Header';
 const HomePage = lazy(() => import('./pages/HomePage'));
-const About = lazy(() => import('./components/About'));
+const AboutPage = lazy(() => import('./pages/about-page/AboutPage'));
 const Contact = lazy(() => import('./components/Contact'));
 const ProjectsList = lazy(() => import('./components/Projects/ProjectsList'));
 const NoMatch = lazy(() => import('./components/NoMatch'));
@@ -16,7 +16,7 @@ const App = () => (
       <Suspense fallback={<main />}>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/about" component={About} />
+          <Route exact path="/about" component={AboutPage} />
           <Route exact path="/projects" component={ProjectsList} />
           <Route exact path="/contact" component={Contact} />
           <Route component={NoMatch} />
