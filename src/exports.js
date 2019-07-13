@@ -55,6 +55,13 @@ export const PROJECTS = [
     to: 'https://aaronmassey.pro/tv-reminder/',
     github: 'https://github.com/aaronmassey45/TV-Show-Reminder',
   },
+  {
+    name: 'JavaScript Calculator',
+    img: 'https://imgur.com/BIlYVDf.jpg',
+    preload: 'https://imgur.com/EdxCZQM.jpg',
+    to: 'https://aaronmassey.pro/jscalculator/',
+    github: 'https://github.com/aaronmassey45/JSCalc',
+  },
 ];
 
 export const SOCIAL = [
