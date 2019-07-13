@@ -1,6 +1,6 @@
 import React from 'react';
 
-import UserIcons from '../components/UserIcons';
+import UserIcons from '../components/user-icons/UserIcons';
 
 const email = 'cliffordaaronmassey@gmail.com';
 
