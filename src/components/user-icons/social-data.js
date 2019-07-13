@@ -1,4 +1,4 @@
-export const SOCIAL = [
+const SOCIAL_MEDIA_DATA = [
   {
     name: 'linkedin',
     link: 'https://www.linkedin.com/in/aaronmassey45/',
@@ -16,3 +16,5 @@ export const SOCIAL = [
     link: 'https://github.com/aaronmassey45',
   },
 ];
+
+export default SOCIAL_MEDIA_DATA;
