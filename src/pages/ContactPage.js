@@ -1,26 +1,20 @@
 import React from 'react';
 
 import UserIcons from '../components/user-icons/UserIcons';
-
-const email = 'cliffordaaronmassey@gmail.com';
+import ContactForm from '../components/contact-form/ContactForm';
 
 export default () => (
   <main id="contact">
     <h1 className="lg-heading">
       Contact <span className="text-secondary">Me</span>
     </h1>
-    <h2 className="sm-heading">I'll get back to you as soon as possible</h2>
+    <h2 className="sm-heading">Hit me up!</h2>
     <div className="content">
       <div className="msg">
         Have questions? In San Antonio and want to grab a coffee? Or better yet,
         some tequila shots? Feel free to send me a message!
       </div>
-
-      <div className="box">
-        <a href={`mailto:${email}`}>
-          <i className="text-secondary fas fa-envelope" /> {email}
-        </a>
-      </div>
+      <ContactForm />
     </div>
     <UserIcons />
   </main>
