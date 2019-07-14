@@ -87,4 +87,14 @@
   .projects {
     grid-template-columns: 1fr;
   }
+
+  #contact {
+    .contact-form {
+      margin-top: 5%;
+
+      .group {
+        margin-top: 5%;
+      }
+    }
+  }
 }
