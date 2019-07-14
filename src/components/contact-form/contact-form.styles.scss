@@ -1,0 +1,28 @@
+@import '../../css/config';
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+
+  .button {
+    width: 50%;
+    height: 50px;
+    letter-spacing: 0.5px;
+    line-height: 50px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    background-color: $secondary-color;
+    color: $primary-color;
+    border: none;
+
+    &:hover {
+      color: $secondary-color;
+      background-color: $primary-color;
+      border: 1px solid $secondary-color;
+    }
+  }
+}
