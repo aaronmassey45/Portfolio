@@ -18,7 +18,7 @@ const FIELDS = [
   },
   {
     to: '/contact',
-    title: 'How To Reach Me',
+    title: 'Contact',
   },
 ];
 
