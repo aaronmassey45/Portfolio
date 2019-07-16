@@ -8,24 +8,32 @@ import SKILLS_DATA from './skills-data';
 const AboutPage = () => (
   <main id="about">
     <h1 className="lg-heading">
-      About <span className="text-secondary">Me</span>.
+      About <span className="text-secondary">Me</span>
     </h1>
-    <h2 className="sm-heading">Let me tell you a few things...</h2>
+    <h2 className="sm-heading">Let me tell you a few things about myself...</h2>
     <div className="about-info">
       <img src={logo} alt="Aaron Massey" className="bio-image" />
       <div className="bio">
         <h3 className="text-secondary">BIO</h3>
         <p>
-          Why do I say Engineer instead of Developer? Because I worked hard to
-          get my Electrical Engineering degree and am going to use it in some
-          capacity! While working on my EE degree I realized the coding aspect
-          better scratched my itch to create. I'm currently working on a 100
-          Algorithm challenge, read all about it on my{' '}
+          My current focus is in Full Stack Development using the MERN stack
+          while expanding my knowledge in testing and dev ops. Why do I call my
+          self an Full Stack Engineer instead of Developer? I worked hard to get
+          my Bachelor's in Electrical Engineering and am going to use it in some
+          capacity. While working on my EE degree I realized I enjoyed my
+          courses where I got to code much more. After graduating I decided to
+          change career fields. I'm currently working on personal projects and
+          completing 100 algorithms, read all about it on my{' '}
           <b>
-            <a href="https://medium.com/@aaronmassey45">blog</a>
+            <a
+              href="https://medium.com/@aaronmassey45"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              blog
+            </a>
           </b>
-          ! Outside of developing I have a beautiful girlfriend, a handsome son,
-          and two good ole puppers.
+          !
         </p>
       </div>
       {SKILLS_DATA.map((skill, index) => (
