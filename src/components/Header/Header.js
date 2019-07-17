@@ -1,68 +1,21 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import Menu from './Menu';
 import MenuButton from './MenuButton';
 
-export const HeaderContext = React.createContext();
+const Header = () => {
+  const [isMenuShown, setShownState] = useState(false);
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
+  const toggleMenu = () => {
+    setShownState(!isMenuShown);
+  };
 
-    this.toggleMenu = () => {
-      const {
-        menuBtnClassList,
-        menuBrandingClassList,
-        menuNavClassList,
-        menuClassList,
-        navItemClassList,
-        showMenu,
-      } = this.state;
-
-      if (!showMenu) {
-        this.setState({
-          ...this.state,
-          menuBtnClassList: [...menuBtnClassList, 'close'],
-          menuBrandingClassList: [...menuBrandingClassList, 'show'],
-          menuNavClassList: [...menuNavClassList, 'show'],
-          menuClassList: [...menuClassList, 'show'],
-          navItemClassList: [...navItemClassList, 'show'],
-          showMenu: true,
-        });
-      } else {
-        this.setState({
-          ...this.state,
-          menuClassList: ['menu'],
-          menuBrandingClassList: ['menu-branding'],
-          menuBtnClassList: ['menu-btn'],
-          menuNavClassList: ['menu-nav'],
-          navItemClassList: ['nav-item'],
-          showMenu: false,
-        });
-      }
-    };
-
-    this.state = {
-      showMenu: false,
-      menuClassList: ['menu'],
-      menuBrandingClassList: ['menu-branding'],
-      menuBtnClassList: ['menu-btn'],
-      menuNavClassList: ['menu-nav'],
-      navItemClassList: ['nav-item'],
-      toggleMenu: this.toggleMenu,
-    };
-  }
-
-  render() {
-    return (
-      <HeaderContext.Provider value={this.state}>
-        <header>
-          <MenuButton />
-          <Menu />
-        </header>
-      </HeaderContext.Provider>
-    );
-  }
-}
+  return (
+    <header>
+      <MenuButton isMenuShown={isMenuShown} toggleMenu={toggleMenu} />
+      <Menu isMenuShown={isMenuShown} toggleMenu={toggleMenu} />
+    </header>
+  );
+};
 
 export default Header;
