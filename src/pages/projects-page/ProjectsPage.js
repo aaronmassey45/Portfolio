@@ -16,6 +16,7 @@ const ProjectsPage = () => (
         href="https://github.com/aaronmassey45/Portfolio"
         className="text-secondary"
         target="_blank"
+        rel="noopener noreferrer"
       >
         here
       </a>{' '}

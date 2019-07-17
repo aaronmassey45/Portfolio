@@ -18,7 +18,7 @@ const ContactPage = () => (
           yet, some tequila shots? Feel free to send me a message!
         </div>
         <div className="box">
-          <a href={resume} target="_blank">
+          <a href={resume} target="_blank" rel="noopener noreferrer">
             View my resume
           </a>
         </div>
