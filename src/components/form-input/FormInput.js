@@ -1,30 +1,51 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './form-input.styles.scss';
 
-const FormInput = ({ handleChange, label, isTextArea, ...otherProps }) => {
-  return (
-    <div className="group">
-      {isTextArea ? (
-        <textarea
-          className="form-input"
-          onChange={handleChange}
-          {...otherProps}
-        />
-      ) : (
-        <input className="form-input" onChange={handleChange} {...otherProps} />
-      )}
-      {label && (
-        <label
-          className={`${
-            otherProps.value.length ? 'shrink' : ''
-          } form-input-label`}
-        >
-          {label}
-        </label>
-      )}
-    </div>
-  );
+const FormInput = ({
+  Element,
+  label,
+  name,
+  onChange,
+  required,
+  type,
+  value,
+}) => (
+  <div className="group">
+    <Element
+      className="form-input"
+      name={name}
+      onChange={onChange}
+      required={required}
+      type={type}
+      value={value}
+    />
+    {label && (
+      <label
+        className={`${value.length ? 'shrink' : ''} form-input-label`}
+        htmlFor={name}
+      >
+        {label}
+      </label>
+    )}
+  </div>
+);
+
+FormInput.propTypes = {
+  Element: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  required: PropTypes.bool,
+  type: PropTypes.string,
+  value: PropTypes.string.isRequired,
+};
+
+FormInput.defaultProps = {
+  Element: 'input',
+  required: true,
+  type: 'text',
 };
 
 export default FormInput;
