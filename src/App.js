@@ -2,12 +2,13 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import Header from './components/Header/Header';
-const HomePage = lazy(() => import('./pages/HomePage'));
-const AboutPage = lazy(() => import('./pages/about-page/AboutPage'));
-const ContactPage = lazy(() => import('./pages/ContactPage'));
-const ProjectsPage = lazy(() => import('./pages/projects-page/ProjectsPage'));
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+import Header from 'components/Header/Header';
+
+const AboutPage = lazy(() => import('pages/about-page/AboutPage'));
+const ContactPage = lazy(() => import('pages/ContactPage'));
+const HomePage = lazy(() => import('pages/HomePage'));
+const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
+const ProjectsPage = lazy(() => import('pages/projects-page/ProjectsPage'));
 
 const App = () => (
   <Router>
