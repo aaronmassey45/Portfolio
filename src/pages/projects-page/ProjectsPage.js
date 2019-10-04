@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Project from '../../components/Project';
-
+import Project from 'components/Project';
 import PROJECTS_DATA from './projects-data';
 
 const ProjectsPage = () => (
@@ -23,8 +22,15 @@ const ProjectsPage = () => (
       to view the code for my portfolio.
     </h4>
     <div className="projects">
-      {PROJECTS_DATA.map(props => (
-        <Project {...props} key={props.name} />
+      {PROJECTS_DATA.map(({ name, img, preload, github, to }) => (
+        <Project
+          github={github}
+          img={img}
+          key={name}
+          name={name}
+          preload={preload}
+          to={to}
+        />
       ))}
     </div>
   </main>
