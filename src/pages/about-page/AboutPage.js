@@ -1,8 +1,7 @@
 import React from 'react';
 
-import Skill from '../../components/Skill';
-import logo from '../../assets/logo.png';
-
+import Skill from 'components/Skill';
+import logo from 'assets/logo.png';
 import SKILLS_DATA from './skills-data';
 
 const AboutPage = () => (
@@ -19,13 +18,14 @@ const AboutPage = () => (
           My current focus is in Full Stack Development using the MERN stack
           while working on open source projects and expanding my knowledge in
           testing. Why do I call myself a Full Stack Engineer instead of
-          Developer? I worked hard to get my Bachelor's in Electrical
+          Developer? I worked hard to get my Bachelor&apos;s in Electrical
           Engineering and am going to use it in some capacity. While in college,
           my friend and I were asked by the owner of the apartment complex we
           worked at to build an iOS and Android application for the property so
           I started learning Java. It was then that I knew that after graduating
-          I was going to change career fields. I'm currently working on personal
-          projects and completing 100 algorithms, read all about it on my{' '}
+          I was going to change career fields. I&apos;m currently working on
+          personal projects and completing 100 algorithms, read all about it on
+          my&nbsp;
           <b>
             <a
               href="https://medium.com/@aaronmassey45"
