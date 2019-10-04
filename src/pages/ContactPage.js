@@ -1,9 +1,8 @@
 import React from 'react';
 
-import UserIcons from '../components/user-icons/UserIcons';
-import ContactForm from '../components/contact-form/ContactForm';
-
-import resume from '../assets/aaronMasseyResume.pdf';
+import resume from 'assets/aaronMasseyResume.pdf';
+import ContactForm from 'components/contact-form/ContactForm';
+import UserIcons from 'components/user-icons/UserIcons';
 
 const ContactPage = () => (
   <main id="contact">
