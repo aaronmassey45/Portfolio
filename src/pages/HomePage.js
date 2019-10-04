@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import UserIcons from '../components/user-icons/UserIcons';
+import UserIcons from 'components/user-icons/UserIcons';
 
 const HomePage = () => {
   useEffect(() => {
