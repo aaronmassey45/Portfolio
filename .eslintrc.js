@@ -26,6 +26,10 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/jsx-one-expression-per-line': 'off',
+    'arrow-parens': ['error', 'as-needed'],
+    'object-curly-newline': ['error', { multiline: true }],
+    'react/jsx-curly-brace-presence': ['error', { children: 'ignore' }],
+    'import/no-extraneous-dependencies': 'off',
   },
   settings: {
     'import/resolver': {
