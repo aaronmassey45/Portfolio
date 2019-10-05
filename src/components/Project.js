@@ -1,11 +1,12 @@
 import React from 'react';
 import Lazyload from 'react-lazyload';
+import PropTypes from 'prop-types';
 
 const Project = ({ img, preload, name, to, github }) => (
   <div id={name}>
     <a href={to} target="_blank" rel="noopener noreferrer">
       <Lazyload
-        height={'100%'}
+        height="100%"
         offset={100}
         once
         placeholder={<img src={preload} alt={`Blurred ${name}`} />}
@@ -31,5 +32,13 @@ const Project = ({ img, preload, name, to, github }) => (
     </a>
   </div>
 );
+
+Project.propTypes = {
+  img: PropTypes.string.isRequired,
+  preload: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
+};
 
 export default Project;
