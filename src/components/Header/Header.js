@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import Menu from './Menu';
-import MenuButton from './MenuButton';
+import Menu from 'components/Header/Menu';
+import MenuButton from 'components/Header/MenuButton';
 
 const Header = () => {
   const [isMenuShown, setShownState] = useState(false);
