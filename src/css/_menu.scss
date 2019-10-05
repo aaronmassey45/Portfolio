@@ -84,7 +84,6 @@
       height: 250px;
       background: url(../assets/logo.png);
       border-radius: 50%;
-      // border: solid 3px $secondary-color;
     }
   }
 
@@ -118,7 +117,6 @@
   }
 }
 
-//delay each nav-item slide in by 0.1s
 @for $x from 1 through 4 {
   .nav-item:nth-child(#{$x}) {
     transition-delay: $x * 0.1s;
