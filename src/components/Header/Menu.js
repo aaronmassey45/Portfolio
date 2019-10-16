@@ -22,6 +22,16 @@ const Menu = ({ isMenuShown, toggleMenu }) => {
             to={to}
           />
         ))}
+        <li className={`nav-item ${showClass}`.trim()}>
+          <a
+            className="nav-link"
+            href="https://novoresume.com/a/aaronmassey45.1"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            R&eacute;sum&eacute;
+          </a>
+        </li>
       </ul>
     </nav>
   );
