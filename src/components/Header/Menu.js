@@ -8,11 +8,11 @@ const Menu = ({ isMenuShown, toggleMenu }) => {
   const showClass = isMenuShown ? 'show' : '';
 
   return (
-    <nav className={`menu ${showClass}`}>
-      <div className={`menu-branding ${showClass}`}>
+    <nav className={`menu ${showClass}`.trim()}>
+      <div className={`menu-branding ${showClass}`.trim()}>
         <div className="portrait" />
       </div>
-      <ul className={`menu-nav ${showClass}`}>
+      <ul className={`menu-nav ${showClass}`.trim()}>
         {FIELDS.map(({ title, to }) => (
           <NavItem
             isShown={isMenuShown}
