@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Header from 'components/Header/Header';
+import Header from 'components/header/Header';
 
 const NotFoundPage = lazy(() => import('pages/404-page/NotFoundPage'));
 const AboutPage = lazy(() => import('pages/about-page/AboutPage'));
