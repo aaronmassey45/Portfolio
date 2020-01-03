@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import NavItem from 'components/Header/NavItem';
-import FIELDS from 'components/Header/menu-fields';
+import NavItem from './nav-item/NavItem';
+import FIELDS from './nav-fields';
 
-const Menu = ({ isMenuShown, toggleMenu }) => {
+const Nav = ({ isMenuShown, toggleMenu }) => {
   const showClass = isMenuShown ? 'show' : '';
 
   return (
@@ -37,9 +37,9 @@ const Menu = ({ isMenuShown, toggleMenu }) => {
   );
 };
 
-Menu.propTypes = {
+Nav.propTypes = {
   isMenuShown: PropTypes.bool.isRequired,
   toggleMenu: PropTypes.func.isRequired,
 };
 
-export default Menu;
+export default Nav;
