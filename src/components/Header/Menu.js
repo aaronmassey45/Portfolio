@@ -15,7 +15,7 @@ const Menu = ({ isMenuShown, toggleMenu }) => {
       <ul className={`menu-nav ${showClass}`.trim()}>
         {FIELDS.map(({ title, to }) => (
           <NavItem
-            isShown={isMenuShown}
+            showClass={showClass}
             key={title}
             title={title}
             toggleMenu={toggleMenu}
