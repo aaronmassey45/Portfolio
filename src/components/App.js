@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Header from 'components/Header/Header';
 
+const NotFoundPage = lazy(() => import('pages/404-page/NotFoundPage'));
 const AboutPage = lazy(() => import('pages/about-page/AboutPage'));
-const ContactPage = lazy(() => import('pages/ContactPage'));
-const HomePage = lazy(() => import('pages/HomePage'));
-const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
+const ContactPage = lazy(() => import('pages/contact-page/ContactPage'));
+const HomePage = lazy(() => import('pages/home-page/HomePage'));
 const ProjectsPage = lazy(() => import('pages/projects-page/ProjectsPage'));
 
 const App = () => (
