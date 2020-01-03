@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import Menu from 'components/Header/Menu';
-import MenuButton from 'components/Header/MenuButton';
+import Nav from 'components/header/nav/Nav';
+import ToggleNavBtn from 'components/header/toggle-nav-btn/ToggleNavBtn';
 
 const Header = () => {
   const [isMenuShown, setShownState] = useState(false);
@@ -12,8 +12,8 @@ const Header = () => {
 
   return (
     <header>
-      <MenuButton isMenuShown={isMenuShown} toggleMenu={toggleMenu} />
-      <Menu isMenuShown={isMenuShown} toggleMenu={toggleMenu} />
+      <ToggleNavBtn isMenuShown={isMenuShown} toggleMenu={toggleMenu} />
+      <Nav isMenuShown={isMenuShown} toggleMenu={toggleMenu} />
     </header>
   );
 };
