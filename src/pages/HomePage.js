@@ -17,7 +17,7 @@ const HomePage = () => {
         Aaron <span className="text-secondary">Massey</span>
       </h1>
       <h2 className="sm-heading">
-        Full Stack Engineer, Dog Whisperer, & Fitness Guru.
+        Dog Whisperer, Fitness Guru & Software Engineer at eMetric.
       </h2>
       <UserIcons />
     </main>
