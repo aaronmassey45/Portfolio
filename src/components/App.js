@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import Header from 'components/Header/Header';
 
@@ -16,11 +15,21 @@ const App = () => (
       <Header />
       <Suspense fallback={<main />}>
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/about" component={AboutPage} />
-          <Route exact path="/projects" component={ProjectsPage} />
-          <Route exact path="/contact" component={ContactPage} />
-          <Route component={NotFoundPage} />
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/about">
+            <AboutPage />
+          </Route>
+          <Route exact path="/projects">
+            <ProjectsPage />
+          </Route>
+          <Route exact path="/contact">
+            <ContactPage />
+          </Route>
+          <Route>
+            <NotFoundPage />
+          </Route>
         </Switch>
       </Suspense>
       <footer id="main-footer">
@@ -29,12 +38,5 @@ const App = () => (
     </>
   </Router>
 );
-
-/* eslint-disable react/forbid-foreign-prop-types */
-Route.propTypes.component = PropTypes.oneOfType([
-  Route.propTypes.component,
-  PropTypes.object,
-]);
-/* eslint-enable react/forbid-foreign-prop-types */
 
 export default App;
