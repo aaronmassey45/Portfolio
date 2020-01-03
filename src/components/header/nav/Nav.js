@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import NavItem from './nav-item/NavItem';
-import FIELDS from './nav-fields';
+import FIELDS from 'components/header/nav/nav-fields';
+import NavItem from 'components/header/nav/nav-item/NavItem';
 
 const Nav = ({ isMenuShown, toggleMenu }) => {
   const showClass = isMenuShown ? 'show' : '';
