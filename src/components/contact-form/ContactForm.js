@@ -6,17 +6,24 @@ import FormInput from 'components/form-input/FormInput';
 
 import './contact-form.styles.scss';
 
+const INITIAL_FIELDS = { name: '', message: '', email: '' };
+
 const ContactForm = ({ setSnackbarMsg }) => {
-  const [fields, setFields] = useState({ name: '', message: '', email: '' });
+  const [fields, setFields] = useState({ ...INITIAL_FIELDS });
   const { name, message, email } = fields;
 
   const handleSubmit = async e => {
     e.preventDefault();
 
+    if (message.trim().length === 0) {
+      setFields({ ...fields, message: '' });
+      return setSnackbarMsg('Please enter a message!');
+    }
+
     try {
       const response = await submitContactHandler(fields);
       const json = await response.json();
-      setFields({ name: '', message: '', email: '' });
+      setFields({ ...INITIAL_FIELDS });
       setSnackbarMsg(json.submission_text);
     } catch (error) {
       setSnackbarMsg('Form did not submit, please try again');
