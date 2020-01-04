@@ -9,6 +9,7 @@ module.exports = {
     'airbnb',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:prettier/recommended',
   ],
   globals: {
     Atomics: 'readonly',
