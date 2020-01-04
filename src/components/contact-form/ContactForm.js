@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import submitContactHandler from 'apis/submitContactHandler';
 import FormInput from 'components/form-input/FormInput';
+
 import './contact-form.styles.scss';
 
 const ContactForm = ({ setSnackbarMsg }) => {
@@ -12,14 +14,7 @@ const ContactForm = ({ setSnackbarMsg }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://app.99inbound.com/api/e/cjNByqpy', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(fields),
-      });
+      const response = await submitContactHandler(fields);
       const json = await response.json();
       setFields({ name: '', message: '', email: '' });
       setSnackbarMsg(json.submission_text);
