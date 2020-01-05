@@ -1,53 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import submitContactHandler from 'apis/submitContactHandler';
 import FormInput from 'components/form-input/FormInput';
 
-import './contact-form.styles.scss';
-
-const INITIAL_FIELDS = { name: '', message: '', email: '' };
-
-const ContactForm = ({ setSnackbarMsg }) => {
-  const [fields, setFields] = useState({ ...INITIAL_FIELDS });
-  const { name, message, email } = fields;
-
-  const handleSubmit = async e => {
-    e.preventDefault();
-
-    if (message.trim().length === 0) {
-      setFields({ ...fields, message: '' });
-      return setSnackbarMsg('Please enter a message!');
-    }
-
-    try {
-      const response = await submitContactHandler(fields);
-      const json = await response.json();
-      setFields({ ...INITIAL_FIELDS });
-      setSnackbarMsg(json.submission_text);
-    } catch (error) {
-      setSnackbarMsg('Form did not submit, please try again');
-    }
-  };
-
-  const handleChange = e => {
-    const { name: field, value } = e.target;
-    setFields({ ...fields, [field]: value });
-  };
+const ContactForm = ({ formFields, handleFormSubmit, handleInputChange }) => {
+  const { email, message, name } = formFields;
 
   return (
-    <form onSubmit={handleSubmit} className="contact-form">
+    <form onSubmit={handleFormSubmit} className="contact-form">
       <FormInput
         name="name"
         value={name}
-        onChange={handleChange}
+        onChange={handleInputChange}
         label="Name"
         required
       />
       <FormInput
         name="email"
         value={email}
-        onChange={handleChange}
+        onChange={handleInputChange}
         label="Email"
         required
         type="email"
@@ -55,7 +26,7 @@ const ContactForm = ({ setSnackbarMsg }) => {
       <FormInput
         name="message"
         value={message}
-        onChange={handleChange}
+        onChange={handleInputChange}
         label="Message"
         Element="textarea"
         required
@@ -67,6 +38,14 @@ const ContactForm = ({ setSnackbarMsg }) => {
   );
 };
 
-ContactForm.propTypes = { setSnackbarMsg: PropTypes.func.isRequired };
+ContactForm.propTypes = {
+  formFields: PropTypes.shape({
+    email: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+  handleFormSubmit: PropTypes.func.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
+};
 
 export default ContactForm;
