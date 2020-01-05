@@ -1,7 +1,7 @@
 import React from 'react';
 
 import resume from 'assets/aaronMasseyResume.pdf';
-import ContactForm from 'components/contact-form/ContactForm';
+import ContactForm from 'components/contact-form/ContactFormContainer';
 import UserIcons from 'components/user-icons/UserIcons';
 import Snackbar from 'components/snackbar/Snackbar';
 import useSnackbar from 'custom-hooks/useSnackbar';
