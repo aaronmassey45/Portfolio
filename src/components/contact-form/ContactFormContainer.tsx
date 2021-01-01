@@ -1,17 +1,24 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 import submitContactHandler from 'apis/submitContactHandler';
 import ContactForm from 'components/contact-form/ContactForm';
 
 import './contact-form.styles.scss';
 
+interface IContactFormContainerProps {
+  setSnackbarMsg: any;
+}
+
 const INITIAL_FIELDS = { name: '', message: '', email: '' };
 
-const ContactFormContainer = ({ setSnackbarMsg }) => {
+const ContactFormContainer = ({
+  setSnackbarMsg,
+}: IContactFormContainerProps) => {
   const [fields, setFields] = useState({ ...INITIAL_FIELDS });
 
-  const handleFormSubmit = async e => {
+  const handleFormSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     if (fields.message.trim().length === 0) {
@@ -30,7 +37,7 @@ const ContactFormContainer = ({ setSnackbarMsg }) => {
     }
   };
 
-  const handleInputChange = e => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name: field, value } = e.target;
     setFields({ ...fields, [field]: value });
   };
@@ -43,7 +50,5 @@ const ContactFormContainer = ({ setSnackbarMsg }) => {
     />
   );
 };
-
-ContactFormContainer.propTypes = { setSnackbarMsg: PropTypes.func.isRequired };
 
 export default ContactFormContainer;
