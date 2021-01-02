@@ -1,8 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const ToggleNavBtn = ({ isMenuShown, toggleMenu }) => {
-  const onKeyPress = e => {
+interface ToggleNavBtnProps {
+  isMenuShown: boolean;
+  toggleMenu: () => void,
+}
+
+const ToggleNavBtn = ({ isMenuShown, toggleMenu }: ToggleNavBtnProps) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === 'Enter') toggleMenu();
   };
 
@@ -10,7 +14,7 @@ const ToggleNavBtn = ({ isMenuShown, toggleMenu }) => {
     <div
       className={`menu-btn ${isMenuShown ? 'close' : ''}`}
       onClick={toggleMenu}
-      onKeyPress={onKeyPress}
+      onKeyPress={handleKeyPress}
       role="button"
       tabIndex={0}
     >
@@ -19,11 +23,6 @@ const ToggleNavBtn = ({ isMenuShown, toggleMenu }) => {
       <div className="btn-line" />
     </div>
   );
-};
-
-ToggleNavBtn.propTypes = {
-  isMenuShown: PropTypes.bool.isRequired,
-  toggleMenu: PropTypes.func.isRequired,
 };
 
 export default ToggleNavBtn;

@@ -1,4 +1,9 @@
-const FIELDS = [
+interface INavField {
+  to: string;
+  title: string;
+}
+
+const FIELDS: INavField[] = [
   {
     to: '/',
     title: 'Home',

@@ -1,8 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
-const NavItem = ({ showClass, to, title, toggleMenu }) => (
+interface INavItemProps {
+  showClass: string;
+  to: string;
+  title: string;
+  toggleMenu: () => void;
+}
+
+const NavItem = ({ showClass, to, title, toggleMenu }: INavItemProps) => (
   <li className={`nav-item ${showClass}`.trim()}>
     <NavLink
       activeClassName="current"
@@ -15,12 +21,5 @@ const NavItem = ({ showClass, to, title, toggleMenu }) => (
     </NavLink>
   </li>
 );
-
-NavItem.propTypes = {
-  showClass: PropTypes.string.isRequired,
-  to: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  toggleMenu: PropTypes.func.isRequired,
-};
 
 export default NavItem;
