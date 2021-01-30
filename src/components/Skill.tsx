@@ -1,7 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Skill = ({ skill, index }) => (
+import { SkillData } from 'pages/about-page/skills-data';
+
+interface ISkillProps {
+  index: number;
+  skill: SkillData;
+}
+
+const Skills = ({ skill, index }: ISkillProps) => (
   <div className={`skill skill-${index + 1}`}>
     <h2>{skill.title}</h2>
     {skill.languages && (
@@ -21,13 +27,4 @@ const Skill = ({ skill, index }) => (
   </div>
 );
 
-Skill.propTypes = {
-  skill: PropTypes.exact({
-    title: PropTypes.string,
-    languages: PropTypes.arrayOf(PropTypes.string),
-    devTools: PropTypes.arrayOf(PropTypes.string),
-  }).isRequired,
-  index: PropTypes.number.isRequired,
-};
-
-export default Skill;
+export default Skills;

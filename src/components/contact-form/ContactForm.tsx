@@ -1,9 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import FormInput from 'components/form-input/FormInput';
 
-const ContactForm = ({ formFields, handleFormSubmit, handleInputChange }) => {
+interface IFormField {
+  email: string;
+  message: string;
+  name: string;
+}
+
+export interface IContactFormProps {
+  formFields: IFormField;
+  handleFormSubmit: (e: React.SyntheticEvent) => Promise<void>;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const ContactForm = ({ formFields, handleFormSubmit, handleInputChange }: IContactFormProps) => {
   const { email, message, name } = formFields;
 
   return (
@@ -28,7 +39,7 @@ const ContactForm = ({ formFields, handleFormSubmit, handleInputChange }) => {
         value={message}
         onChange={handleInputChange}
         label="Message"
-        Element="textarea"
+        tagName="textarea"
         required
       />
       <button className="button" type="submit">
@@ -36,16 +47,6 @@ const ContactForm = ({ formFields, handleFormSubmit, handleInputChange }) => {
       </button>
     </form>
   );
-};
-
-ContactForm.propTypes = {
-  formFields: PropTypes.shape({
-    email: PropTypes.string.isRequired,
-    message: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-  }).isRequired,
-  handleFormSubmit: PropTypes.func.isRequired,
-  handleInputChange: PropTypes.func.isRequired,
 };
 
 export default ContactForm;

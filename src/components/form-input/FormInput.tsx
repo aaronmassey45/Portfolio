@@ -1,19 +1,31 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
-import PropTypes from 'prop-types';
+
+import { IContactFormProps } from 'components/contact-form/ContactForm';
 
 import './form-input.styles.scss';
 
+interface IFormInputProps {
+  label: string;
+  name: string;
+  onChange: IContactFormProps['handleInputChange'];
+  required: boolean;
+  tagName?: any;
+  type?: string;
+  value: string;
+};
+
 const FormInput = ({
-  Element,
   label,
   name,
   onChange,
-  required,
-  type,
+  required = true,
+  tagName: InputElement = 'input',
+  type = 'text',
   value,
-}) => (
+}: IFormInputProps) => (
   <div className="group">
-    <Element
+    <InputElement
       className="form-input"
       name={name}
       onChange={onChange}
@@ -31,21 +43,5 @@ const FormInput = ({
     )}
   </div>
 );
-
-FormInput.propTypes = {
-  Element: PropTypes.string,
-  label: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  required: PropTypes.bool,
-  type: PropTypes.string,
-  value: PropTypes.string.isRequired,
-};
-
-FormInput.defaultProps = {
-  Element: 'input',
-  required: true,
-  type: 'text',
-};
 
 export default FormInput;

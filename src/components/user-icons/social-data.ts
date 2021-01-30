@@ -1,4 +1,9 @@
-const SOCIAL_MEDIA_DATA = [
+interface ISocialData {
+  name: string;
+  link: string;
+}
+
+const SOCIAL_MEDIA_DATA: ISocialData[] = [
   {
     name: 'linkedin',
     link: 'https://www.linkedin.com/in/aaronmassey45/',

@@ -1,4 +1,10 @@
-const SKILLS_DATA = [
+export type SkillData = {
+  devTools: string[];
+  languages: string[];
+  title: string;
+}
+
+const SKILLS_DATA: SkillData[] = [
   {
     title: 'Front End Development',
     languages: ['HTML', 'CSS', 'Javascript'],
@@ -26,6 +32,7 @@ const SKILLS_DATA = [
       'Responsive Design',
       'ES6, ES7, ES8',
     ],
+    languages: [],
   },
 ];
 

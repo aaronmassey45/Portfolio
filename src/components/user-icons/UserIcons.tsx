@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SOCIAL_MEDIA_DATA from './social-data';
+import SOCIAL_MEDIA_DATA from 'components/user-icons/social-data';
 
 const UserIcons = () => (
   <div className="icons">

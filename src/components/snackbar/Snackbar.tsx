@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import PropTypes from 'prop-types';
-
 import './snackbar.styles.scss';
 
+interface ISnackbarProps {
+  isShown: boolean;
+  message: string;
+}
+
 // eslint-disable-next-line arrow-body-style
-const Snackbar = ({ message, isShown }) => {
+const Snackbar = ({ message, isShown }: ISnackbarProps) => {
   return ReactDOM.createPortal(
     <div id="snackbar" className={isShown ? 'show' : ''}>
       {message}
@@ -14,11 +17,6 @@ const Snackbar = ({ message, isShown }) => {
     // eslint-disable-next-line comma-dangle
     document.getElementById('snackbar-root')
   );
-};
-
-Snackbar.propTypes = {
-  message: PropTypes.string.isRequired,
-  isShown: PropTypes.bool.isRequired,
 };
 
 export default Snackbar;

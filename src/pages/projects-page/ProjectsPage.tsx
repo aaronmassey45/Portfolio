@@ -1,7 +1,8 @@
+/* eslint-disable import/extensions */
 import React from 'react';
 
 import Project from 'components/Project';
-import PROJECTS_DATA from './projects-data';
+import { PROJECTS_DATA } from './projects-data';
 
 const ProjectsPage = () => (
   <main id="projects">

@@ -1,4 +1,12 @@
-const PROJECTS_DATA = [
+export type ProjectData = {
+  name: string;
+  img: string;
+  preload: string;
+  to: string;
+  github: string;
+};
+
+export const PROJECTS_DATA: ProjectData[] = [
   {
     name: 'Speedstudy Tracker',
     img: 'https://imgur.com/kMsu37X.png',
@@ -63,5 +71,3 @@ const PROJECTS_DATA = [
     github: 'https://github.com/aaronmassey45/JSCalc',
   },
 ];
-
-export default PROJECTS_DATA;
